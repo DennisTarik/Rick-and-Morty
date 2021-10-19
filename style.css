@@ -23,6 +23,27 @@
   /* Borders */
   --border-radius: 1rem;
 }
+body {
+  font-family: var(--font-family-text);
+  margin: 0;
+  background-color: var(--color-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-family-headline);
+}
+
+header {
+  background-color: var(--color-primary);
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-header);
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
