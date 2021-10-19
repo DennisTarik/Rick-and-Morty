@@ -12,9 +12,7 @@ function renderApp() {
 
   const footerComponent = createFooterComponent();
 
-  appElement.append(headerComponent);
-  appElement.append(mainComponent);
-  appElement.append(footerComponent);
+  appElement.append(headerComponent, mainComponent, footerComponent);
 }
 
 renderApp();
