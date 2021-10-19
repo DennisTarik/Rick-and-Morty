@@ -6,8 +6,25 @@ export default function createCharacterCard() {
         'article',
         {
             className: styles.card,
-            textContent: 'Rick',
-        }
+        },
+        [
+            createElement('div',
+            { className: 'styles.cardName',
+            textContent: 'Name:',
+            }),
+            createElement('div',
+            { className: 'styles.cardStatus',
+            textContent: 'Status:',
+            }),
+            createElement('div',
+            { className: 'styles.cardLocation',
+            textContent: 'Location:',
+            }),
+            createElement('div',
+            { className: 'styles.Appearance',
+            textContent: 'First Appearance:',
+            }),
+        ]
     );
     return characterCard;
 }
