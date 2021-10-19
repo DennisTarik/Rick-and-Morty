@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+
+*,
+*::after
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  /* Colors */
+  --color-primary: #FFFFFF;
+  --color-header: #202329;
+  --color-card-background: #3C3E44;
+  --color-card-text-primary: #F5F5F5;
+  --color-card-text-secondary: #9E9E9E;
+  --color-background: #24282F;
+  --color-footer: #202329;
+
+  /* Font */
+  --font-family-headline: 'Roboto Mono', monosoace;
+  --font-family-text: 'Roboto', sans-serif;
+
+  /* Borders */
+  --border-radius: 1rem;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
