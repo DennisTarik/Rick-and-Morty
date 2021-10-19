@@ -1,0 +1,14 @@
+{
+  "name": "app-boilerplate",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "prettier": "^2.4.1",
+    "vite": "^2.6.4"
+  }
+}
