@@ -4,10 +4,12 @@ import styles from "./characterCard.module.css";
 export default function createCharacterCard({
   name,
   status,
-  lastKnownLocation,
+  location,
   firstSeenIn,
-  race,
-  imgSrc,
+  type,
+  gender,
+  species,
+  image,
 }) {
   const characterCard = createElement(
     "article",
@@ -15,11 +17,13 @@ export default function createCharacterCard({
       className: styles.card,
     },
     [
-      createElement("img", { src: imgSrc }),
+      createElement("img", { src: image }),
       createElement("h2", { textContent: name }),
-      createElement("h4", { textContent: `${status} - ${race}` }),
+      createElement("h4", { textContent: `${status} - ${species}` }),
       createElement("h4", { textContent: "Last seen in" }),
-      createElement("h4", { textContent: lastKnownLocation }),
+      createElement("h4", { textContent: location }),
+      createElement("h4", { textContent: gender }),
+      createElement("h4", { textContent: type }),
       createElement("h4", { textContent: "First seen in" }),
       createElement("h4", { textContent: firstSeenIn }),
     ]
