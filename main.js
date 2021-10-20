@@ -1,7 +1,7 @@
 import './style.css'
 import { createHeaderComponent } from './lib/headerComponent';
 import { createMainComponent } from './lib/mainComponent';
-import { createFooterComponent } from './lib/footerComponent';
+import { /* createFooterComponent */ } from './lib/footerComponent';
 
 function renderApp() {
   const appElement = document.querySelector('#app');
@@ -10,9 +10,9 @@ function renderApp() {
 
   const mainComponent = createMainComponent();
 
-  const footerComponent = createFooterComponent();
+/*   const footerComponent = createFooterComponent(); */
 
-  appElement.append(headerComponent, mainComponent, footerComponent);
+  appElement.append(headerComponent, mainComponent, /* footerComponent */);
 }
 
 renderApp();
