@@ -54,7 +54,8 @@ main {
 }
 footer {
   background-color: var(--color-footer);
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   height: 20vh;
-  padding-top: 10rem;
+  display: flex;
 }
