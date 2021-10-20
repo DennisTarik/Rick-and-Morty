@@ -11,7 +11,6 @@ async function renderApp() {
 
   const response = await fetch("https://rickandmortyapi.com/api/character");
   const body = await response.json();
-  console.log(body);
   const characters = body.results;
 
   const mainComponent = createMainComponent(characters);

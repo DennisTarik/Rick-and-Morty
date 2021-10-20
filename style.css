@@ -27,8 +27,8 @@
 
 body {
   font-family: var(--font-family-text);
-  margin: 0;
   background-color: var(--color-background);
+  margin: 0;
   padding-top: 0;
 }
 
@@ -49,11 +49,8 @@ header {
 }
 
 main {
-  height: 50vh;
-  width: 100vw;
-  text-align: center;
-  padding-top: 15rem;
-  font-size: 4rem;
+  background-color: var(--color-background);
+  font-size: 1rem;
 }
 
 footer {

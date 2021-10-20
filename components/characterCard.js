@@ -5,28 +5,57 @@ export default function createCharacterCard({
   name,
   status,
   location,
-  firstSeenIn,
-  type,
-  gender,
+  episode,
   species,
   image,
 }) {
+  const firstEpisodeElement = createElement("h4", { textContent: "" });
+  const firstEpisode = episode[0];
+  const lastEpisodeLocation = createElement("h4", { textContent: "" });
+  const lastLocation = location.name;
+
   const characterCard = createElement(
     "article",
     {
       className: styles.card,
     },
     [
-      createElement("img", { src: image }),
-      createElement("h2", { textContent: name }),
-      createElement("h4", { textContent: `${status} - ${species}` }),
-      createElement("h4", { textContent: "Last seen in" }),
-      createElement("h4", { textContent: location }),
-      createElement("h4", { textContent: gender }),
-      createElement("h4", { textContent: type }),
-      createElement("h4", { textContent: "First seen in" }),
-      createElement("h4", { textContent: firstSeenIn }),
+      createElement("img", {
+        className: styles.image,
+        src: image,
+      }),
+      createElement("h2", {
+        className: styles.main,
+        textContent: name,
+      }),
+      createElement("h4", {
+        className: styles.text,
+        textContent: `${status} - ${species}`,
+      }),
+      createElement("h4", {
+        className: styles.secondaryText,
+        textContent: "First seen in:",
+      }),
+      firstEpisodeElement,
+      createElement("h4", {
+        className: styles.secondaryText,
+        textContent: "Last known location:",
+      }),
+      lastEpisodeLocation,
     ]
   );
+
+  fetch(firstEpisode)
+    .then((response) => response.json())
+    .then((body) => {
+      firstEpisode.textContent = body.name;
+    });
+
+  /* fetch(lastLocation)
+    .then((response) => response.json())
+    .then((body) => {
+      lastLocation.textContent = body.name;
+    });
+ */
   return characterCard;
 }
