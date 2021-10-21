@@ -51,11 +51,15 @@ export default function createCharacterCard({
       firstEpisodeElement.textContent = body.name;
     });
 
-  fetch(lastLocationUrl)
-    .then((response) => response.json())
-    .then((body) => {
-      lastEpisodeLocation.textContent = body.name;
-    });
+  if (lastLocationUrl) {
+    fetch(lastLocationUrl)
+      .then((response) => response.json())
+      .then((body) => {
+        lastEpisodeLocation.textContent = body.name;
+      });
+  } else {
+    lastEpisodeLocation.textContent = "Location unknown";
+  }
 
   return characterCard;
 }

@@ -1,23 +1,23 @@
 import "./style.css";
 import { createHeaderComponent } from "./lib/headerComponent";
 import { createMainComponent } from "./lib/mainComponent";
-import /* createFooterComponent */ "./lib/footerComponent";
-/* import createCharacterCard from "./components/characterCard"; */
+import { createFooterComponent } from "./lib/footerComponent";
+import { fetchCharacters } from "./lib/fetchCharacter";
 
 async function renderApp() {
   const appElement = document.querySelector("#app");
 
   const headerComponent = createHeaderComponent();
 
-  const response = await fetch("https://rickandmortyapi.com/api/character");
-  const body = await response.json();
-  const characters = body.results;
+  const characterFetchElement = await fetchCharacters(
+    "https://rickandmortyapi.com/api/character"
+  );
 
-  const mainComponent = createMainComponent(characters);
+  const mainComponent = createMainComponent(characterFetchElement);
 
-  /*   const footerComponent = createFooterComponent(); */
+  const footerComponent = createFooterComponent();
 
-  appElement.append(headerComponent, mainComponent /* footerComponent */);
+  appElement.append(headerComponent, mainComponent, footerComponent);
 }
 
 renderApp();
