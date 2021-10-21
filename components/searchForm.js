@@ -1,9 +1,9 @@
 import { createElement } from "../lib/elements";
 import styles from "./searchForm.module.css";
 
-export function createSearchElement(onSubmit) {
+export default function createSearchElement(onSubmit) {
   const searchInputElement = createElement("input", {
-    type: "name",
+    type: "text",
     placeholder: "Enter character here",
     className: styles.input,
   });
@@ -23,7 +23,7 @@ export function createSearchElement(onSubmit) {
       className: styles.form,
       onsubmit: function (event) {
         event.preventDefault();
-        onSubmit();
+        onSubmit(searchInputElement.value);
       },
     },
     [searchInputElement, searchButtonElement]
