@@ -9,9 +9,15 @@ export default function createCharacterCard({
   species,
   image,
 }) {
-  const firstEpisodeElement = createElement("h4", { textContent: "" });
+  const firstEpisodeElement = createElement("h4", {
+    className: styles.locationText,
+    textContent: "",
+  });
   const firstEpisode = episode[0];
-  const lastEpisodeLocation = createElement("h4", { textContent: "" });
+  const lastEpisodeLocation = createElement("h4", {
+    className: styles.locationText,
+    textContent: "",
+  });
   const lastLocationUrl = location.url;
 
   const characterCard = createElement(
