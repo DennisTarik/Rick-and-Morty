@@ -1,6 +1,6 @@
 .card {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   background-color: var(--color-card-background);
   column-gap: 1rem;
   margin: 3rem;
@@ -10,7 +10,9 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.main {
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 500px));
   color: var(--color-card-text-primary);
   font-size: 3rem;
 }
@@ -22,10 +24,16 @@
 
 .secondaryText {
   color: var(--color-card-text-secondary);
+  font-size: 3rem;
+}
+
+.locationText {
+  color: var(--color-card-text-primary);
   font-size: 2rem;
 }
 
 .image {
+  object-fit: cover;
   grid-row: 1/7;
   height: 100%;
   width: 100%;
