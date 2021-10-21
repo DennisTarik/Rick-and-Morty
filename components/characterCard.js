@@ -12,7 +12,7 @@ export default function createCharacterCard({
   const firstEpisodeElement = createElement("h4", { textContent: "" });
   const firstEpisode = episode[0];
   const lastEpisodeLocation = createElement("h4", { textContent: "" });
-  const lastLocation = location.url;
+  const lastLocationUrl = location.url;
 
   const characterCard = createElement(
     "article",
@@ -28,16 +28,16 @@ export default function createCharacterCard({
         className: styles.main,
         textContent: name,
       }),
-      createElement("h4", {
+      createElement("p", {
         className: styles.text,
         textContent: `${status} - ${species}`,
       }),
-      createElement("h4", {
+      createElement("p", {
         className: styles.secondaryText,
         textContent: "First seen in:",
       }),
       firstEpisodeElement,
-      createElement("h4", {
+      createElement("p", {
         className: styles.secondaryText,
         textContent: "Last known location:",
       }),
@@ -51,7 +51,7 @@ export default function createCharacterCard({
       firstEpisodeElement.textContent = body.name;
     });
 
-  fetch(lastLocation)
+  fetch(lastLocationUrl)
     .then((response) => response.json())
     .then((body) => {
       lastEpisodeLocation.textContent = body.name;
