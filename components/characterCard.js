@@ -12,7 +12,7 @@ export default function createCharacterCard({
   const firstEpisodeElement = createElement("h4", { textContent: "" });
   const firstEpisode = episode[0];
   const lastEpisodeLocation = createElement("h4", { textContent: "" });
-  const lastLocation = location.name;
+  const lastLocation = location.url;
 
   const characterCard = createElement(
     "article",
@@ -48,14 +48,14 @@ export default function createCharacterCard({
   fetch(firstEpisode)
     .then((response) => response.json())
     .then((body) => {
-      firstEpisode.textContent = body.name;
+      firstEpisodeElement.textContent = body.name;
     });
 
-  /* fetch(lastLocation)
+  fetch(lastLocation)
     .then((response) => response.json())
     .then((body) => {
-      lastLocation.textContent = body.name;
+      lastEpisodeLocation.textContent = body.name;
     });
- */
+
   return characterCard;
 }
